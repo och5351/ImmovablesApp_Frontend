@@ -18,9 +18,3 @@ ImmovablesApp_FrontEnd
 ```
 
 | Android의 경우 Emulator, IOS의 경우 Simulator를 실행한 후 명령어를 수행해야합니다. (빌드 오류 발생함)
-
-# Branch 전략
-
-<div align="center">
-<img src="https://user-images.githubusercontent.com/45858414/147107265-7635f1c3-8a2a-4ecf-a1d0-692ba4f0217c.png" width=70% height=70%/>
-</div>
