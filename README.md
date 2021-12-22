@@ -1,9 +1,11 @@
 # ImmovablesApp_Frontend
-ImmovablesApp_Backend
+
+ImmovablesApp_FrontEnd
 
 ## ImmovablesApp_Frontend Build Guide
 
 프로젝트 루트 폴더에서 아래의 명령 실행
+
 ```
 1. npm install
 
@@ -15,4 +17,7 @@ ImmovablesApp_Backend
 
 ```
 
-Android의 경우 Emulator, IOS의 경우 Simulator를 실행한 후 명령어를 수행해야합니다. (빌드 오류 발생함)
+| Android의 경우 Emulator, IOS의 경우 Simulator를 실행한 후 명령어를 수행해야합니다. (빌드 오류 발생함)
+
+# Branch 전략
+
