@@ -9,8 +9,7 @@ import HomeNavigator from './homeScreen/HomeNavigator';
 // import UseReducer from './UseReducer';
 // import Fetch from './fetch/Fetch';
 import MapNavigator from './mapScreen/MapNavigator';
-import ThunkFetch from './fetch/ThunkFetch';
-import Setting from './settingScreen/ThunkFetch';
+import Setting from './settingScreen/Settings';
 import type {RouteProp, ParamListBase} from '@react-navigation/native';
 
 type TabBarIconProps = {focused: boolean; color: string; size: number};
