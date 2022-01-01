@@ -5,7 +5,7 @@ import {StyleSheet} from 'react-native';
 import {Colors} from 'react-native-paper';
 import {FlatList} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native'
-
+import { TouchableOpacity } from 'react-native';
 const items = [
   {name: '문의한 방', component: "login"},
   {name: '연락한 부동산', component: "login"},
@@ -31,23 +31,18 @@ export default function SettingsMain() {
         <Text style={styles.text}>로그인 > </Text>
       </View>
       <View style={styles.flat_container}>
-      <FlatList
-        data={items}
-        renderItem={({item}) => (
-          <View style={styles.item}>
-            <Text
-              style={styles.flat_text}
-              onPress={index => {
-                  console.log('')
-                  navigation.navigate(item.component)
-              }}>
-              {item.name}
-            </Text>
-          </View>
-        )}
-        numColumns={2}
-      />
-    </View>
+        <FlatList
+          data={items}
+          renderItem={({item}) => (
+            <TouchableOpacity style={styles.item} onPress={() => navigation.navigate(item.component)}>
+              <Text style={styles.flat_text}>
+                {item.name}
+              </Text>
+            </TouchableOpacity>
+          )}
+          numColumns={2}
+        />
+      </View>
     </View>
   );
 }
