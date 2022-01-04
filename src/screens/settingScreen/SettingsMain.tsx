@@ -8,12 +8,12 @@ import {useNavigation} from '@react-navigation/native'
 import {TouchableOpacity} from 'react-native';
 
 const flat_items = [
-  {name: '문의한 방', component: "settingsWebView"},
+  {name: '문의한 방', component: "login"},
   {name: '연락한 부동산', component: "login"},
   {name: '매물번호 조회', component: "login"},
   {name: '이벤트', component: "login"},
   {name: '자주 묻는 질문', component: "login"},
-  {name: '공지사항', component: "settingsWebView"},
+  {name: '공지사항', component: "login"},
   {name: '1:1 문의', component: "login"},
   {name: '방 내놓기', component: "login"},
 ];
@@ -47,11 +47,11 @@ export default function SettingsMain() {
       </View>
       
       <View style={styles.temrs_view}>
-      <Text style={styles.terms_text}>이용 약관</Text> 
+      <Text style={styles.terms_text} onPress={() => navigation.navigate("settingsWebView")}>이용 약관</Text> 
       <View style={styles.vertical_lines}></View>
-      <Text style={styles.terms_text}>개인정보 처리방침</Text> 
+      <Text style={styles.terms_text} onPress={() => navigation.navigate("settingsWebView")}>개인정보 처리방침</Text> 
       <View style={styles.vertical_lines}></View>
-      <Text style={styles.terms_text}>회사 소개</Text> 
+      <Text style={styles.terms_text} onPress={() => navigation.navigate("settingsWebView")}>회사 소개</Text> 
       </View>
     </View>
 
