@@ -8,12 +8,12 @@ import {useNavigation} from '@react-navigation/native'
 import {TouchableOpacity} from 'react-native';
 
 const flat_items = [
-  {name: '문의한 방', component: "login"},
+  {name: '문의한 방', component: "settingsWebView"},
   {name: '연락한 부동산', component: "login"},
   {name: '매물번호 조회', component: "login"},
   {name: '이벤트', component: "login"},
   {name: '자주 묻는 질문', component: "login"},
-  {name: '공지사항', component: "login"},
+  {name: '공지사항', component: "settingsWebView"},
   {name: '1:1 문의', component: "login"},
   {name: '방 내놓기', component: "login"},
 ];
