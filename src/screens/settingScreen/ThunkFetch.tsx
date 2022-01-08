@@ -10,6 +10,7 @@ export default function ThunkFetch() {
   const {humorText, errorMessage, loading} = useSelector<AppState, H.State>(
     ({humor}) => humor,
   );
+  // test
   const dispatch = useDispatch();
   const getHumor = useCallback(() => {
     dispatch(H.requestHumor());
