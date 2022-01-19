@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash 스크린을 불러오는 XML mipmap 에 splash icon을 불러온다.-->
+<!-- android:layout_width="match_parent" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@mipmap/splash_icon"
+    android:orientation="vertical">
+</LinearLayout>
