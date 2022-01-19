@@ -1,5 +1,5 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 // prettier-ignore
 import {SafeAreaView, View, Text, TextInput, TouchableView, UnderlineText}
@@ -10,6 +10,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AppState} from '../../store';
 import * as U from '../../utils';
 import * as L from '../../store/login';
+import {Colors} from 'react-native-paper';
+import Color from 'color';
+
+let {width, height} = Dimensions.get('window');
 
 // prettier-ignore
 export default function Login() {
@@ -24,7 +28,7 @@ export default function Login() {
   const dispatch = useDispatch()
   // prettier-ignore
   const goTabNavigator = useCallback(() => {
-    dispatch(L.loginAction({email, name, password}))
+    // dispatch(L.loginAction({email, name, password}))
     navigation.navigate('TabNavigator')}, [])
   const goSignUp = useCallback(() => navigation.navigate('SignUp'), []);
 
@@ -40,70 +44,59 @@ export default function Login() {
     })
     .catch((e)=> {})
   }, [loggedIn])
-
+  // prettier-ignore
   return (
     <SafeAreaView>
       <View style={[styles.view]}>
-        <AutoFocusProvider contentContainerStyle={[styles.keyboardAwareFocus]}>
-          <View style={[styles.textView]}>
-            <Text style={[styles.text]}>email</Text>
-            <View border style={[styles.textInputView]}>
-              <TextInput
-                onFocus={focus}
-                style={[styles.textInput]}
-                value={email}
-                onChangeText={setEmail}
-                placeholder="enter your email"
-              />
-            </View>
+          {/*어디살래? 문구 삽입*/}
+          <View style={styles.titleTextView}>
+            <Text style={styles.titleText}>어디</Text>
+            <Text style={styles.titleText}>  살래?</Text>
           </View>
-          <View style={[styles.textView]}>
-            <Text style={[styles.text]}>password</Text>
-            <View border style={[styles.textInputView]}>
-              <TextInput
-                secureTextEntry
-                onFocus={focus}
-                style={[styles.textInput]}
-                value={password}
-                onChangeText={setPassword}
-                placeholder="enter your password"
-              />
-            </View>
-          </View>
-          <TouchableView
-            notification
-            style={[styles.touchableView]}
-            onPress={goTabNavigator}>
-            <Text style={[styles.text]}>Login</Text>
-          </TouchableView>
-          <UnderlineText
-            style={[styles.text, {marginTop: 15}]}
-            onPress={goSignUp}>
-            SignUp
-          </UnderlineText>
-        </AutoFocusProvider>
-      </View>
+          {/* OAuth2.0 아이콘 삽입 */}
+          <View style={styles.iconView}></View>
+          {/* 로그인 없이 메인 스크린 진입 */}
+          <TouchableOpacity 
+           style={styles.titleTextView}
+           onPress={goTabNavigator}
+           >
+            <Text style={styles.notSignInText}>
+            로그인 없이 둘러보기
+            </Text>
+          </TouchableOpacity>
+        </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
-  view: {flex: 1, justifyContent: 'space-between', alignItems: 'center'},
-  text: {fontSize: 20},
-  keyboardAwareFocus: {
+  view: {
     flex: 1,
-    padding: 5,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.blue500,
   },
-  textView: {width: '100%', padding: 5, marginBottom: 10},
-  textInput: {fontSize: 24, padding: 10},
-  textInputView: {marginTop: 5, borderRadius: 10},
-  touchableView: {
-    flexDirection: 'row',
-    height: 50,
-    borderRadius: 10,
-    width: '90%',
+  titleTextView: {
+    flex: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.blue500,
+  },
+  titleText: {
+    fontSize: 50,
+    color: 'white',
+    backgroundColor: Colors.blue500,
+  },
+  iconView: {
+    flex: 3,
+  },
+  notSignInTextView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.blue500,
+  },
+  notSignInText: {
+    fontSize: 20,
+    color: 'white',
   },
 });
